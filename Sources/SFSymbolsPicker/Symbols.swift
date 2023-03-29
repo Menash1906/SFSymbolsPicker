@@ -7,8 +7,8 @@
 
 import Foundation
 
-public enum Category: String, CaseIterable, Identifiable {
-    public var id: String { rawValue }
+enum Category: String, CaseIterable, Identifiable {
+    var id: String { rawValue }
     
     case communication = "Communication"
     case weather = "Weather"
