@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SFSymbolsPicker: View {
+public struct SFSymbolsPicker: View {
     
     @Binding public var icon: String
     @State var category: Category = .arrows
@@ -15,7 +15,12 @@ struct SFSymbolsPicker: View {
 
     let columns = [GridItem(.adaptive(minimum: 70)), GridItem(.adaptive(minimum: 70)), GridItem(.adaptive(minimum: 70))]
     @Environment(\.dismiss) var dismiss
-    var body: some View {
+    
+    public init(icon: Binding<String>) {
+        _icon = icon
+    }
+    
+    public var body: some View {
         VStack {
             Picker("Category", selection: $category) {
                 ForEach(Category.allCases, id: \.id) { category in
@@ -58,7 +63,7 @@ struct SFSymbolsPicker: View {
 struct SFSymbolsPicker_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SFSymbolsPicker(icon: .constant("gear"), category: .games)
+            SFSymbolsPicker(icon: .constant("gear"))
         }
     }
 }
