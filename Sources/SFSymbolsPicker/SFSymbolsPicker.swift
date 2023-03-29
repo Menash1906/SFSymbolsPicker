@@ -29,7 +29,7 @@ public struct SFSymbolsPicker: View {
                 Image(systemName: icon)
                     .renderingMode(.template)
                     .font(.system(size: 25))
-                    .padding(16)
+                    .frame(width: 48, height: 48)
                     .background(color)
                     .foregroundColor(.white)
                     .cornerRadius(12)
