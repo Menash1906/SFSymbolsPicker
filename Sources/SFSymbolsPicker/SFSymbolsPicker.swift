@@ -62,9 +62,6 @@ public struct SFSymbolsPicker: View {
                                             self.icon = icon
                                         }
                                     }
-                                Text(icon.replacingOccurrences(of: ".", with: " "))
-                                    .font(.caption)
-                                    .multilineTextAlignment(.center)
                             }
                             
                         }.padding(.top, 5)
